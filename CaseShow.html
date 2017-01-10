@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+    <html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="css/all.css"/>
+        <title></title>
+    </head>
+    <script>
+        $(function() {
+            //nav跳转
+            $("#nav>ul>li,#bottomnav>ul>li").click(function () {
+                var pageindex=$(this).index();
+                $("#nav>ul>li,#bottomnav>ul>li").eq(pageindex).addClass("navon").siblings().removeClass("navon");
+                if (pageindex == 0) {
+                    location.href = 'index.html';
+                } else if (pageindex == 2) {
+                    location.href = 'news.html';
+                } else if (pageindex == 3) {
+                    location.href = 'aboutUs.html';
+                } else if (pageindex == 4) {
+                    location.href = 'callUs.html';
+                }
+
+            });
+        })
+    </script>
+    <style>
+        #mainbox{
+            text-align: center;
+        }
+        #mainphoto{
+            height:300px;
+            background:url("images/mainphoto1.jpg")center no-repeat;
+        }
+
+        .casenav{
+            text-align: center;
+            padding: 50px 0;
+            min-width: 720px;
+        }
+        .casenav div{
+            display: inline-block;
+            width:120px;
+            height:40px;
+            line-height: 40px;
+            border:1px solid #CECECE;
+            border-radius:50px;
+            cursor:pointer;
+            margin:0 30px;
+        }
+        .casenavon{
+            color:#fff;
+            background-color: #FF6637;
+            border:1px solid #FF6637 !important;
+        }
+        .caselist1,.caselist2,.caselist3{
+            width:80%;
+            min-width: 720px;
+            display:inline-block;
+        }
+        .caselist1>a>img,.caselist2>a>img,.caselist3>a>img{
+            width:25%;
+            margin:10px 20px;
+            /*过渡*/
+            transition:left 0.2s linear,top 0.2s linear;
+            /*相对定位*/
+            position:relative;
+            top:0;
+            left:0;
+        }
+        .caselist1>a>img:hover,.caselist2>a>img:hover,.caselist3>a>img:hover {
+            left:5px;
+            top:-5px;
+        }
+        .hidden{
+            display:none;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            //案例展示鼠标移入nav显示所选项，隐藏其它选项
+            $(".casenav>div").mouseenter(function(){
+                $(this).addClass("casenavon").siblings().removeClass("casenavon");
+                var index=$(this).index();
+                $("#caselistbox>div").eq(index).removeClass('hidden').siblings().addClass("hidden");
+
+            });
+
+        })
+    </script>
+    <body>
+        <header>
+            <div id="headcenterbox">
+                <div id="logo"><h2>AdvertisingDesign</h2></div>
+                <div id="nav">
+                    <ul>
+                        <li>首页</li>
+                        <li class="navon">案例展示</li>
+                        <li>新闻资讯</li>
+                        <li>关于我们</li>
+                        <li>联系我们</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div id="mainbox">
+            <div id="mainphoto"></div>
+            <div class="navtitle">
+                <h1>案例欣赏</h1>
+            </div>
+            <div class="casenav">
+                <div class="casenavon">全部</div>
+                <div>手机端</div>
+                <div>VI配套</div>
+            </div>
+            <div id="caselistbox">
+                <div class="caselist1">
+                    <a href=""><img src="images/case1.jpg" alt=""/></a>
+                    <a href=""><img src="images/case2.jpg" alt=""/></a>
+                    <a href=""><img src="images/case3.jpg" alt=""/></a>
+                    <a href=""><img src="images/case4.jpg" alt=""/></a>
+                    <a href=""><img src="images/case5.jpg" alt=""/></a>
+                    <a href=""><img src="images/case6.jpg" alt=""/></a>
+                    <a href=""><img src="images/case7.jpg" alt=""/></a>
+                    <a href=""><img src="images/case8.jpg" alt=""/></a>
+                    <a href=""><img src="images/case9.jpg" alt=""/></a>
+                </div>
+                <div class="caselist2 hidden">
+                    <a href=""><img src="images/case9.jpg" alt=""/></a>
+                    <a href=""><img src="images/case8.jpg" alt=""/></a>
+                    <a href=""><img src="images/case7.jpg" alt=""/></a>
+                    <a href=""><img src="images/case6.jpg" alt=""/></a>
+                    <a href=""><img src="images/case5.jpg" alt=""/></a>
+                    <a href=""><img src="images/case4.jpg" alt=""/></a>
+                    <a href=""><img src="images/case3.jpg" alt=""/></a>
+                    <a href=""><img src="images/case2.jpg" alt=""/></a>
+                    <a href=""><img src="images/case1.jpg" alt=""/></a>
+                </div>
+                <div class="caselist3 hidden">
+                    <a href=""><img src="images/case1.jpg" alt=""/></a>
+                    <a href=""><img src="images/case8.jpg" alt=""/></a>
+                    <a href=""><img src="images/case4.jpg" alt=""/></a>
+                    <a href=""><img src="images/case2.jpg" alt=""/></a>
+                    <a href=""><img src="images/case9.jpg" alt=""/></a>
+                    <a href=""><img src="images/case3.jpg" alt=""/></a>
+                    <a href=""><img src="images/case6.jpg" alt=""/></a>
+                    <a href=""><img src="images/case5.jpg" alt=""/></a>
+                    <a href=""><img src="images/case7.jpg" alt=""/></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="us">
+                <div><img src="images/dw.png" alt=""/><div>XXX省XXX市XXX县XXX路XXX号</div></div>
+                <div><img src="images/call.png" alt=""/><div>联系电话：020-000000</div></div>
+                <div><img src="images/time.png" alt=""/><div>工作时间：09:00—18：00</div></div>
+                <div><img src="images/email.png" alt=""/><div>contact@fkadjkhsf.co</div></div>
+            </div>
+            <div id="bottomnav">
+                <ul>
+                    <li>首页</li>
+                    <li>案例展示</li>
+                    <li>新闻资讯</li>
+                    <li>关于我们</li>
+                    <li>联系我们</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+    </html>

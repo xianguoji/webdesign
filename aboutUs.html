@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+    <html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="css/all.css"/>
+        <title></title>
+    </head>
+    <script>
+        $(function() {
+            //nav跳转
+            $("#nav>ul>li,#bottomnav>ul>li").click(function () {
+                var pageindex=$(this).index();
+                $("#nav>ul>li,#bottomnav>ul>li").eq(pageindex).addClass("navon").siblings().removeClass("navon");
+                if (pageindex == 0) {
+                    location.href = 'index.html';
+                } else if (pageindex == 1) {
+                    location.href = 'CaseShow.html';
+                } else if (pageindex == 2) {
+                    location.href = 'news.html';
+                } else if (pageindex == 4) {
+                    location.href = 'callUs.html';
+                }
+
+            });
+        })
+    </script>
+    <style>
+        #mainbox{
+            text-align: center;
+        }
+        #mainphoto{
+            height:300px;
+            background:url("images/mainphoto3.jpg")center no-repeat;
+        }
+        .navtitle{
+            /*text-align: center;*/
+        }
+        .navtitle>p{
+            line-height: 40px;
+            width:680px;
+            color:#999999;
+            display: inline-block;
+        }
+        #aboutusimgbox{
+            display: inline-block;
+            width:85%;
+            text-align: left;
+        }
+        #aboutusimg{
+            font-size: 0;
+            background-color: #F13A3A;
+        }
+        #aboutusimg1{
+            width:66%;
+            max-height: 550px;
+        }
+        #imgtext{
+            color:#fff;
+            float:right;
+            width:32%;
+            margin-top:-350px ;
+        }
+        #imgtext>h2{
+            font-weight: normal;
+        }
+
+
+        #designer{
+            background-color: #EBEBEB;
+            margin-top: 50px;
+            height:600px;
+            text-align: center;
+        }
+
+        #designer>div{
+            width:80%;
+            height:100%;
+            min-width: 950px;
+            display: inline-block;
+        }
+        #designer>div>div{
+            display: inline-block;
+            width:24%;
+            min-width: 220px;
+            height:100%;
+        }
+        #designer>div>div>div{
+            width:90%;
+            margin-top: 60px;
+            max-width: 270px;
+            padding-bottom: 20px;
+            display: inline-block;
+            background-color: #fff;
+        }
+        #designer img{
+            width:100%;
+        }
+    </style>
+    <body>
+        <header>
+            <div id="headcenterbox">
+                <div id="logo"><h2>AdvertisingDesign</h2></div>
+                <div id="nav">
+                    <ul>
+                        <li>首页</li>
+                        <li>案例展示</li>
+                        <li>新闻资讯</li>
+                        <li class="navon">关于我们</li>
+                        <li>联系我们</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div id="mainbox">
+            <div id="mainphoto"></div>
+            <div class="navtitle ">
+                <h1>关于我们</h1>
+                <p>
+                    为其塑造全新品牌视觉形象，其是一家座落于国家级软件产业基地广州天河软件内的智能科技公司，
+                    该公司是中国最早进入电信增值业务和拥有语音增值业务产品的企业，其软件产品在电信运商、政
+                    府信息化、大中型企业等行业客户领域得到了广泛应用。佳都新太科技连续多年被认定为国家规划
+                    布局内重点软件企业、国家高新技术企业、广州软件园骨干企业、国家计算机信息系统集成一级资
+                    质企业、重信用守合同企业、省级安全技术防范一级企业
+                </p>
+            </div>
+            <div id="aboutusimgbox">
+                <div id="aboutusimg" >
+                     <img id="aboutusimg1" src="images/aboutus1.png"/>
+                </div>
+                <div id="imgtext">
+                    <h2>以策略为先导的设计公司 </h2>
+                    <p>策略引导视觉，视觉服务传播，传播引爆 <br/> 商业价值！</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="designer">
+            <div>
+
+                <div>
+                    <div>
+                        <img src="images/designer1.jpg" alt=""/>
+                        <p>Aaron <br/>资深网页设计师</p>
+                        <span>（7年网页设计经验）</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <img src="images/designer2.jpg" alt=""/>
+                        <p>Jack <br/>高级插画师</p>
+                        <span>（5年绘画设计经验）</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <img src="images/designer3.jpg" alt=""/>
+                        <p>Anna <br/>广告商务策划</p>
+                        <span>（8年活动策划经验）</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <img src="images/designer4.jpg" alt=""/>
+                        <p>Beck <br/>高级平面设计师</p>
+                        <span>（6年网页设计经验）</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <div id="us">
+                <div><img src="images/dw.png" alt=""/><div>XXX省XXX市XXX县XXX路XXX号</div></div>
+                <div><img src="images/call.png" alt=""/><div>联系电话：020-000000</div></div>
+                <div><img src="images/time.png" alt=""/><div>工作时间：09:00—18：00</div></div>
+                <div><img src="images/email.png" alt=""/><div>contact@fkadjkhsf.co</div></div>
+            </div>
+            <div id="bottomnav">
+                <ul>
+                    <li>首页</li>
+                    <li>案例展示</li>
+                    <li>新闻资讯</li>
+                    <li>关于我们</li>
+                    <li>联系我们</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+    </html>

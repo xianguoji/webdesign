@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+    <html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="css/all.css"/>
+        <title></title>
+    </head>
+    <script>
+        $(function() {
+            //nav跳转
+            $("#nav>ul>li,#bottomnav>ul>li").click(function () {
+                var pageindex=$(this).index();
+                $("#nav>ul>li,#bottomnav>ul>li").eq(pageindex).addClass("navon").siblings().removeClass("navon");
+                if (pageindex == 0) {
+                    location.href = 'index.html';
+                } else if (pageindex == 1) {
+                    location.href = 'CaseShow.html';
+                } else if (pageindex == 3) {
+                    location.href = 'aboutUs.html';
+                } else if (pageindex == 4) {
+                    location.href = 'callUs.html';
+                }
+
+            });
+        })
+    </script>
+    <style>
+        #mainbox{
+            text-align: center;
+        }
+        #mainphoto{
+            height:300px;
+            background:url("images/mainphoto2.jpg")center no-repeat;
+        }
+        .enline{
+            width:90%;
+            border-bottom:1px solid #808080;
+        }
+        #newbox{
+            display: inline-block;
+            width:90%;
+        }
+        #newbox>div{
+            text-align: left;
+            height:180px;
+            min-width: 600px;
+            border-bottom:1px dashed #DBDBDB;
+        }
+        #newbox>div>.date{
+            display: inline-block;
+            text-align: center;
+            width:8%;
+            min-width: 85px;
+            height:65px;
+         }
+        #newbox>div>.date>div{
+            width:73px;
+            height:73px;
+            background-color: #F2F2F2;
+            position: relative;
+            top:-10px;
+        }
+        .newdetil {
+            display: inline-block;
+            min-width: 600px;
+            width:70%;
+            margin-top: 18px;
+        }
+        .newdetil>p{
+            color:#808080;
+        }
+        .newdetil>a{
+            text-decoration: none;
+            color:#666666;
+        }
+        .newdetil>a:hover{
+            color:red;
+        }
+    </style>
+    <body>
+        <header>
+            <div id="headcenterbox">
+                <div id="logo"><h2>AdvertisingDesign</h2></div>
+                <div id="nav">
+                    <ul>
+                        <li>首页</li>
+                        <li>案例展示</li>
+                        <li class="navon">新闻资讯</li>
+                        <li>关于我们</li>
+                        <li>联系我们</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="mainbox">
+            <div id="mainphoto"></div>
+            <div class="navtitle">
+                <h1 class=" enline">新闻中心</h1>
+            </div>
+            <div id="newbox">
+                <div>
+                    <div class="date">
+                        <div>
+                            <h2>02</h2>
+                            <span>2016/11</span>
+                        </div>
+                    </div>
+                    <div class="newdetil">
+                        <a href="">品牌设计让你的品牌更具价值</a>
+                        <p>品牌只有赋予其商业产品才具有品牌价值，而品牌的构成离不开产品、市场、广告、形象、理念等多方面，品牌并不是取个好听的...</p>
+                    </div>
+                </div>
+                <div>
+                        <div class="date">
+                            <div>
+                                <h2>02</h2>
+                                <span>2016/11</span>
+                            </div>
+                        </div>
+                        <div class="newdetil">
+                            <a href="">白酒酒吧白搭品牌标志LOGO设计和品牌形象设计</a>
+                            <p>品牌背景：百搭是一个年轻时尚的白酒酒吧，中国白酒是一种十分强烈的白酒，被认为是老年人口的白酒，白酒在中国市场被年轻...</p>
+                        </div>
+                </div>
+                <div>
+                    <div class="date">
+                        <div>
+                            <h2>02</h2>
+                            <span>2016/11</span>
+                        </div>
+                    </div>
+                    <div class="newdetil">
+                        <a href="">商务代理公司Dutheil & Barbosa企业LOGO标志设计</a>
+                        <p>重庆企业VI设计Dutheil & Barbosa（D&B)是一家新成立的商业（务）代理公司，委托专业标识LOGO...</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="date">
+                        <div>
+                            <h2>01</h2>
+                            <span>2016/11</span>
+                        </div>
+                    </div>
+                    <div class="newdetil">
+                        <a href="">医疗IT科技公司Medspire企业品牌标志LOGO设计</a>
+                        <p>
+                            品牌背景：　　Medspire是一家位于波兰华沙的专注于创新IT科技和医疗健康领域，主要涉及设计和生产自主设备，帮...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="us">
+                <div><img src="images/dw.png" alt=""/><div>XXX省XXX市XXX县XXX路XXX号</div></div>
+                <div><img src="images/call.png" alt=""/><div>联系电话：020-000000</div></div>
+                <div><img src="images/time.png" alt=""/><div>工作时间：09:00—18：00</div></div>
+                <div><img src="images/email.png" alt=""/><div>contact@fkadjkhsf.co</div></div>
+            </div>
+            <div id="bottomnav">
+                <ul>
+                    <li>首页</li>
+                    <li>案例展示</li>
+                    <li>新闻资讯</li>
+                    <li>关于我们</li>
+                    <li>联系我们</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+    </html>

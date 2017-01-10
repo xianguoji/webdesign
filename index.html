@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="css/all.css"/>
+    <title>广告策划</title>
+    <style>
+        #bannerbox{
+            overflow: hidden;
+        }
+
+        #banner{
+            width:300%;
+            height:700px;
+            position:relative;
+        }
+        #banner>a>div{
+            width:33.333%;
+            height:700px;
+            float:left;
+        }
+        #banner1{
+            background:url('images/banner1.jpg')center no-repeat;
+        }
+        #banner2{
+            background:url('images/banner2.jpg')center no-repeat;
+        }
+        #banner3{
+            background:url('images/banner1.jpg')center no-repeat;
+        }
+        #title{
+            height:250px;
+            background-color:#1B252E;
+            text-align: center;
+        }
+        #title>div{
+            color:white;
+            margin: 20px;
+            min-width: 610px;
+            text-align: left;
+            display:inline-block;
+        }
+        #usServe{
+            text-align: center;
+        }
+        #usServeBox{
+            width:75%;
+            min-width:700px;
+            display:inline-block;
+        }
+        #usServeDetail{
+            border-top: 1px solid #999;
+            padding-top:40px;
+            margin-top: 30px;
+            width:100%;
+            min-width: 700px;
+            height:300px;
+            display:inline-block;
+        }
+        #usServeDetail>div{
+            width:25%;
+            min-width: 150px;
+            height:300px;
+            float:left;
+        }
+        #usServeDetail>div>img{
+            width:40%;
+            min-width:100px;
+        }
+        #usServeDetail>div>p{
+            font-size: 14px;
+            color: #999;
+        }
+        #solution{
+            text-align: center;
+            background-color: #EBEBEB;
+        }
+        #solution>div{
+           width:75%;
+            min-width:700px;
+            display:inline-block;
+            padding-bottom: 50px;
+        }
+        #solutionTitle{
+            display:inline-block;
+        }
+        #lastphoto{
+            text-align:center;
+            min-width: 760px;
+            height:400px;
+            background:url('images/lastphoto.jpg') center no-repeat;
+        }
+        #lastphoto>div{
+            display: inline-block;
+            color: white;
+            font-size:35px;
+            line-height:70px;
+            margin-top: 150px;
+        }
+        #lastphoto>div>b{
+            color:#F13A3A;
+            font-family:'arial black';
+        }
+        #aboutus{
+           height:500px;
+            text-align:center;
+        }
+        #aboutusTilte{
+            text-align:center;
+            margin-top: 40px;
+        }
+        #aboutusImg{
+            width:75%;
+            display:inline-block;
+            min-width:700px;
+            margin:50px 0;
+        }
+        #aboutusImg>div{
+             display:inline-block;
+            width:24%;
+        }
+        #worth{
+           text-align: center;
+            height:450px;
+            background:url('images/worth.jpg')center no-repeat;
+        }
+        #worth>div{
+            width:400px;
+            color:white;
+            display:inline-block;
+            margin-left: 45%;
+            margin-top: 150px;
+        }
+        #title>a,#worth>div>a{
+            background-color: #fff;
+            display:inline-block;
+            border-radius:30px;
+            padding:10px 30px;
+            text-decoration: none;
+            font-family: microsoft yahei;
+        }
+        /*banner切换按钮*/
+        #bannerbtn{
+            list-style: none;
+            height:0;
+        }
+        #bannerbtn>li{
+            display: inline-block;
+            width:13px;
+            height:13px;
+            margin:0 5px;;
+            border-radius:15px ;
+            background-color: #fff;
+            position: relative;
+            left:47%;
+            top:-50px;
+            cursor: pointer;
+        }
+        #bannerbtn>li.on{
+            background-color:#F13A3A ;
+        }
+
+    </style>
+    <script>
+        $(function() {
+            //nav跳转
+            $("#nav>ul>li,#bottomnav>ul>li").click(function () {
+                var pageindex=$(this).index();
+                $("#nav>ul>li,#bottomnav>ul>li").eq(pageindex).addClass("navon").siblings().removeClass("navon");
+                if(pageindex==1){
+                    location.href='CaseShow.html';
+                }else if(pageindex==2){
+                    location.href='news.html';
+                }else if(pageindex==3){
+                    location.href='aboutUs.html';
+                }else if(pageindex==4){
+                    location.href='callUs.html';
+                }
+
+            });
+
+            //banner 轮播
+            var index = 0;
+            var play=null;
+            $("#bannerbtn>li").click(function () {
+                clearInterval(play)
+                index = $(this).index();
+                bannerchange();
+                    autoplay();
+            });
+            function autoplay() {
+               play= setInterval(function () {
+                    index++;
+                    index %= 3;
+                    bannerchange();
+                }, 4000);
+            }
+            autoplay();
+            function bannerchange(){
+                $("#bannerbtn>li").eq(index).addClass("on").siblings().removeClass("on");
+                var width=document.body.clientWidth;
+                if(index==0){
+                    $("#banner").stop();
+                    $("#banner").animate({'margin-left':0},500);
+                }else if(index==1){
+                    $("#banner").stop();
+                    $("#banner").animate({'margin-left':-width},500);
+                }else if(index==2){
+                    $("#banner").stop();
+                    $("#banner").animate({'margin-left':-2*width},500);
+                }
+            }
+            //banner区域鼠标移入暂停轮播，移出启动轮播
+//            $("#banner").mouseenter(function(){
+//                clearInterval(play);
+//            });
+//            $("#banner").mouseleave(function(){
+//                autoplay();
+//            });
+        })
+    </script>
+</head>
+<body>
+    <header>
+        <div id="headcenterbox">
+            <div id="logo"><h2>AdvertisingDesign</h2></div>
+            <div id="nav">
+                <ul>
+                    <li class="navon">首页</li>
+                    <li>案例展示</li>
+                    <li>新闻资讯</li>
+                    <li>关于我们</li>
+                    <li>联系我们</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="bannerbox">
+        <div id="banner">
+            <a><div id="banner1"></div></a>
+            <a><div id="banner2"></div></a>
+            <a><div id="banner3"></div></a>
+        </div>
+    </div>
+        <ul id="bannerbtn">
+            <li class="on"></li>
+            <li class=""></li>
+            <li class=""></li>
+        </ul>
+
+    <div id="title">
+        <div>
+            <h1>公司理念：</h1>
+            <p>以诚信赢得市场，以质量铸造品牌，我们坚信：“品牌”不仅仅是一个商标，一件产品，<br/>
+                是一种品质，它用良好的质量维系消费者对企业的信赖；</p>
+        </div>
+        <a href="">了解更多</a>
+    </div>
+    <div id="usServe">
+        <div id="usServeBox">
+            <h1 >我们的服务</h1>
+            <div id="usServeDetail">
+                <div>
+                    <img src="images/s1.jpg" alt=""/>
+                    <h3>移动端网站设计</h3>
+                    <p>移动共享时代主义</p>
+                    </div>
+                <div>
+                    <img src="images/s2.jpg" alt=""/>
+                    <h3>PC端网站设计</h3>
+                    <p>好看+好用+激发消费者购买欲望</p>
+                    </div>
+                <div>
+                    <img src="images/s3.jpg" alt=""/>
+                    <h3>画册策划</h3>
+                    <p>用画面让产品和服务说话</p>
+                    </div>
+                <div>
+                    <img src="images/s4.jpg" alt=""/>
+                    <h3>形象策略</h3>
+                    <p>从无到有，从有到更好</p>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="solution">
+        <div>
+            <div id="solutionTitle">
+                <h1>我们提供定制化设计解决方案</h1>
+                <p>形象策略+画册策划+PC端网站设计+移动端网站设计</p>
+            </div>
+            <div>
+                <img src="images/p1.jpg" style="width:47%" alt=""/>
+                <img src="images/p2.jpg" style="width:29%" alt=""/>
+                <img src="images/p3.jpg" style="width:22%" alt=""/>
+                <img src="images/p4.jpg" style="width:23%" alt=""/>
+                <img src="images/p5.jpg" style="width:28%" alt=""/>
+                <img src="images/p6.jpg" style="width:46%" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div id="lastphoto">
+        <div>
+            <b>“</b> 每一个品牌都是一个产品，但不是所有的产品 <b>”</b><br/>都是品牌~
+        </div>
+    </div>
+    <div id="aboutus">
+        <div id="aboutusTilte">
+            <h1>关于我们的优势</h1>
+            <p>不断的努力，严格要求自己，真诚的为客户服务</p>
+        </div>
+        <div id="aboutusImg">
+            <div>
+                <img src="images/11.png" alt=""/>
+                <h1 class="fontcolororage">1456</h1>
+                <p>成功案例</p>
+            </div>
+            <div>
+                <img src="images/22.png" alt=""/>
+                <h1 class="fontcolororage">100+</h1>
+                <p>团队成员</p>
+            </div>
+            <div>
+                <img src="images/33.png" alt=""/>
+                <h1 class="fontcolororage">1000+</h1>
+                <p>客户好评</p>
+            </div>
+            <div>
+                <img src="images/44.png" alt=""/>
+                <h1 class="fontcolororage">500+</h1>
+                <p>赢得奖杯</p>
+            </div>
+        </div>
+    </div>
+    <div id="worth">
+            <div>
+                <h1>给你最好的体验价值</h1>
+                <p>网站建设、视觉设计领域从业超过10年！
+                    我们了解大中小型企业的经营模式和需求
+                    我们倡导让客户感知产品的体验价值，而
+                    不仅仅是产品的功能</p>
+                <a href="">了解详情</a>
+            </div>
+    </div>
+    <footer>
+        <div id="us">
+           <div><img src="images/dw.png" alt=""/><div>XXX省XXX市XXX县XXX路XXX号</div></div>
+           <div><img src="images/call.png" alt=""/><div>联系电话：020-000000</div></div>
+           <div><img src="images/time.png" alt=""/><div>工作时间：09:00—18：00</div></div>
+           <div><img src="images/email.png" alt=""/><div>contact@fkadjkhsf.co</div></div>
+        </div>
+        <div id="bottomnav">
+            <ul>
+                <li>首页</li>
+                <li>案例展示</li>
+                <li>新闻资讯</li>
+                <li>关于我们</li>
+                <li>联系我们</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

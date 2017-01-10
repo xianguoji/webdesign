@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+    <html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="css/all.css"/>
+        <title></title>
+    </head>
+    <script>
+        $(function() {
+            //nav跳转
+            $("#nav>ul>li,#bottomnav>ul>li").click(function () {
+                var pageindex=$(this).index();
+                $("#nav>ul>li,#bottomnav>ul>li").eq(pageindex).addClass("navon").siblings().removeClass("navon");
+                if (pageindex == 0) {
+                    location.href = 'index.html';
+                } else if (pageindex == 1) {
+                    location.href = 'CaseShow.html';
+                } else if (pageindex == 2) {
+                    location.href = 'news.html';
+                } else if (pageindex == 3) {
+                    location.href = 'aboutUs.html';
+                }
+
+            });
+        })
+    </script>
+    <style>
+        #mainbox{
+            text-align: center;
+        }
+        #mainphoto{
+            height:300px;
+            background:url("images/mainphoto4.jpg")center no-repeat;
+        }
+        #contact{
+            display: inline-block;
+            width:80%;
+            margin-bottom: 50px;
+        }
+        #contact>div{
+            width:30%;
+            margin:0 10px;
+            border:1px solid #CACACA;
+            display: inline-block;
+            padding:10px 0;
+        }
+        #contact>div>p{
+            margin:0;
+        }
+
+        #messageBook{
+            background-color:#EBEBEB ;
+            text-align: center;
+
+        }
+        #messageBook>div{
+            width:80%;
+            display: inline-block;
+        }
+        #messageBook>div>p{
+            text-align: left;
+        }
+       .txt{
+            height: 30px;
+            width: 194px;
+            line-height: 30px;
+            border:1px solid  #dadada;
+            float: left;
+            text-indent: 6px;
+        }
+       .name{
+           min-width: 55px;
+       }
+       .tdwidth{
+           min-width: 38px;
+       }
+        #messageBook textarea{
+            border-color: #dadada;
+            float: left;
+            height: 74px;
+            width: 100%;
+            text-indent: 6px;
+        }
+        #messageBook table{
+            border-spacing:40px;
+        }
+        #subbtn{
+            width: 150px;
+            height: 44px;
+            border:0;
+            background-color: #F54F4F;
+            color: #fff;
+            font: 14px "微软雅黑";
+            line-height: 44px;
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <header>
+            <div id="headcenterbox">
+                <div id="logo"><h2>AdvertisingDesign</h2></div>
+                <div id="nav">
+                    <ul>
+                        <li>首页</li>
+                        <li>案例展示</li>
+                        <li>新闻资讯</li>
+                        <li>关于我们</li>
+                        <li class="navon">联系我们</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div id="mainbox">
+            <div id="mainphoto"></div>
+            <div class="navtitle">
+                <h1>联系我们</h1>
+                <p>如有任何问题请联系我们，我们7*24小时竭诚为您服务 <br/>
+                    400-000-0000</p>
+            </div>
+            <div id="contact">
+                <div>
+                    <img src="images/sina.png" alt=""/>
+                    <p>广告行业制作</p>
+                    <span>sina.com</span>
+                </div>
+                <div>
+                    <img src="images/qq.png" alt=""/>
+                    <p>在线QQ客服</p>
+                    <span>258506508   258506508</span>
+                </div>
+                <div>
+                    <img src="images/wechat.png" alt=""/>
+                    <p>关注官方微信</p>
+                    <span>guanggaohangye</span>
+                </div>
+            </div>
+        </div>
+        <div id="messageBook">
+            <div>
+                <p>发表你的留言:</p>
+                <form class="messageform" action="">
+                    <table>
+                        <tr>
+                            <td class="name">姓名:</td>
+                            <td><input class="txt" type="text" name="name"/></td>
+                            <td class="tdwidth">邮箱:</td>
+                            <td><input class="txt" type="text"/></td>
+                            <td class="tdwidth">电话:</td>
+                            <td><input class="txt" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td>内容:</td>
+                            <td colspan="5"><textarea placeholder="留言需审核后才显示"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>验证码:</td>
+                            <td><input class="txt" type="text"/></td>
+                            <td colspan="2"><img src="images/validateCode.jpg" alt=""/></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input id="subbtn" type="submit" value="提交留言"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div id="us">
+                <div><img src="images/dw.png" alt=""/><div>XXX省XXX市XXX县XXX路XXX号</div></div>
+                <div><img src="images/call.png" alt=""/><div>联系电话：020-000000</div></div>
+                <div><img src="images/time.png" alt=""/><div>工作时间：09:00—18：00</div></div>
+                <div><img src="images/email.png" alt=""/><div>contact@fkadjkhsf.co</div></div>
+            </div>
+            <div id="bottomnav">
+                <ul>
+                    <li>首页</li>
+                    <li>案例展示</li>
+                    <li>新闻资讯</li>
+                    <li>关于我们</li>
+                    <li>联系我们</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+    </html>
